@@ -1,3 +1,9 @@
+//libreria
+let boton1 = document.getElementById ("btn-2")
+boton1.addEventListener ("click", ()=> {
+    let inputNewsletter= document.getElementById ("inputNewsletter").value; 
+    Swal.fire('Te registraste correctamente con el mail: ' + inputNewsletter)
+})
 //local storage
 let input = prompt ("ingresa una sugerncia");
 localStorage.setItem ("sugerencia", input );
