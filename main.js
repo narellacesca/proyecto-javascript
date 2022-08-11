@@ -1,14 +1,100 @@
-//libreria
-let boton1 = document.getElementById ("btn-2")
-boton1.addEventListener ("click", ()=> {
-    let inputNewsletter= document.getElementById ("inputNewsletter").value; 
-    Swal.fire('Te registraste correctamente con el mail: ' + inputNewsletter)
+//modal
+const modalContainer = document.getElementById("modal_container");
+const openCart = document.getElementById("open");
+const closeCart = document.getElementById("close");
+const modalCart = document.getElementById("modalCart");
+
+
+openCart.addEventListener('click', () => {
+    modalContainer.classList.toggle('modal-active')
+});
+closeCart.addEventListener('click', () => {
+    modalContainer.classList.remove('modal-active')
 })
+modalContainer.addEventListener('click', () => {
+    closeCart.click()
+})
+modalCart.addEventListener('click', (e) => {
+    e.stopPropagation();
+})
+
+//inventario prod
+//clase constructora
+class Productos {
+    constructor(id, nombre, precio, img) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.img = img;
+    }
+}
+
+//array vacio donde pushear todos los productos que vaya agregando el usuario
+const products = []
+const prod1 = new Productos('1', 'BIKINI 1', 1200, '../src/img/bikini1.jpg');
+const prod2 = new Productos('2', 'BIKINI 2', 1200, '../src/img/bikini3.jpg');
+const prod3 = new Productos('3', 'BIKINI 3', 1200, '../src/img/bikini1.jpg');
+const prod4 = new Productos('4', 'BIKINI 4', 1200, '../src/img/bikini3.jpg');
+const prod5 = new Productos('5', 'gift card', 3000, '../src/img/GIFT CARD.png');
+const prod6 = new Productos('5', 'gift card', 1200, '../src/img/GIFT CARD.png');
+//push 
+products.push(prod1, prod2, prod3, prod4, prod5, prod6)
+
+
+
+//funcion mostrar productos
+const mostrarProductos = (products) => {
+    const productContainer = document.getElementById('product-container');
+    //recorro array y por c/u creo card
+    products.forEach(product => {
+        const card = document.createElement('card');
+        card.innerHTML += `<div class="card" style="width:18rem;">
+        <img src="${product.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${product.nombre}</h5>
+        <p class="card-text">Price:$ ${product.precio}</p>
+        <button class="btn btn-primary" id="button${product.id}">BUY!</button>
+        </div>
+        </div>`
+        //al main contenedor le inserto la card
+        productContainer.appendChild(card);
+        //llamo al boton
+        const button = document.getElementById (`button${product.id}`);
+        //evento para que cuando haga click se agregue al carrito
+        button.addEventListener('click', () =>{
+         cart (product.id);
+         Swal.fire(`agregaste ${product.nombre}`)
+        })
+    })
+}
+
+mostrarProductos (products)
+
 //local storage
-let input = prompt ("ingresa una sugerncia");
-localStorage.setItem ("sugerencia", input );
-//carrito
-const carrito = document.querySelector("#cart");
+/*let input = prompt("ingresa una sugerncia");
+localStorage.setItem("sugerencia", input);
+*/
+
+/*//recorro el array de los productos y creo por c/u un div y se lo agrego al div contenedor//
+stockProductos.forEach((producto) => {
+    const div = document.createElement('div')
+    div.classList.add('producto')
+    div.innerHTML = `
+    <img src=${producto.img} alt= "">
+    <h3>${producto.nombre}</h3>
+    <p>${producto.desc}</p>
+    <p class="precioProducto">Precio:$ ${producto.precio}</p>
+    <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
+    `
+    contenedorProductos.appendChild(div)
+    const boton = document.getElementById(`agregar${producto.id}`)
+    boton.addEventListener('click', () => {
+        agregarAlCarrito(producto.id)
+    })
+})*/
+
+
+/*const carrito = document.querySelector("#cart");
 const cartModalOverlay = document.querySelector(".cart-modal-overlay");
 
 carrito.addEventListener("click", () => {
@@ -68,4 +154,4 @@ function cantElementosCarrito() {
     let cantidad = document.querySelectorAll(".product-rows > div");
     let cartQuantity = document.querySelector(".cantidad");
     cartQuantity.innerText = cantidad.length;
-}
+}*/

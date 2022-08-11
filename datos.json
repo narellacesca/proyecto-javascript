@@ -1,0 +1,6 @@
+[    
+    {"id": "sale-1", "precio": 1200, "link":"./pages/productos.html", "img": "./src/img/bikini1.jpg"},
+    {"id": "sale-2", "precio": 1200, "link":"./pages/productos.html", "img": "./src/img/bikini3.jpg"},
+    {"id": "sale-3", "precio": 1200, "link":"./pages/productos.html", "img": "./src/img/bikini1.jpg"},
+    {"id": "sale-4", "precio": 1200, "link":"./pages/productos.html", "img": "./src/img/bikini3.jpg"}
+]
