@@ -8,13 +8,10 @@ const traerJson = () => {
             datos.forEach(sale => {
                 contenedorSale.innerHTML += `
                 <div class = "instagram-item">
-                <div>
-                <h3>${sale.id}</h3>
-                <p>${sale.precio}</p>
                 <img src="${sale.img}" alt="" class="item-tamaño">
                 <a href="${sale.link}"> <button>SHOP NOW</button></a>
                </div>
-                </div>
+            
                 
        `
             })

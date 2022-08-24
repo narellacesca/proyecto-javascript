@@ -1,3 +1,4 @@
+const precioTotal = document.getElementById ("total");
 //creo array vacio
 //funcion para mostrar productos en carrito 
 const shoppingCart = [];
@@ -20,8 +21,10 @@ const cart = (productId) =>{
     buttonDelete.addEventListener ('click', (e) =>{
      deleteProduct (e);
     })
+    precioTotal.innerText = products.reduce ((acc, product)=> acc+ product.precio, 0)
 }
 mostrarEnCarrito ()
+
 
 }
 

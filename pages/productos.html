@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link href="../main.css" rel="stylesheet" />
 </head>
+
 <body>
   <header>
     <div class="alert alert-light" role="alert">
@@ -43,7 +44,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <button class="nav-link fa fa-cart-arrow-down"  id="open" href="#"></a>
+              <button class="nav-link fa fa-cart-arrow-down" id="open" href="#"></a>
             </li>
           </ul>
         </div>
@@ -51,17 +52,18 @@
     </nav>
   </header>
   <main id="product-container">
-    
+
 
     <div class="modal-container" id="modal_container">
-        <div id="modalCart" class="modal-cart">
-          <button id="close" class="btn-close"></button>
-                <h3 id="cartTitle">CARRITO</h3>
-            <div id="cart-container"></div>
-        </div>
+      <div id="modalCart" class="modal-cart">
+        <button id="close" class="btn-close"></button>
+        <h3 id="cartTitle">CARRITO</h3>
+        <p id="precioProducto">TOTAL: <span id="total">0</span></p>
+        <div id="cart-container"></div>
+      </div>
     </div>
 
-</main>
+  </main>
   <!--<main>
     <div class="alert alert-warning alert-dismissible fade show bg-alert" role="alert">
       <strong>HI SUPERLOVERS!&#9829;</strong>
@@ -155,7 +157,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../main.js"></script>
   <script src="../cart.js"></script>
-  
+
 
 </body>
 

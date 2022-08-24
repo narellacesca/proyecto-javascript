@@ -5,11 +5,22 @@
 
 header {
   background-image: linear-gradient(to bottom, #f8d6e9, #fde0f2, #f7d7ea, #ffe3f4, #ffeff9);
-  s;
 }
 
 .tamaño-logo {
   height: 5rem;
+}
+
+
+
+#instagram-grid{
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-item {
+  display: flex;
+  
 }
 
 /* Modal */
@@ -147,10 +158,6 @@ img {
   display: block;
 }
 
-.instagram-grid {
-  display: flex;
-  justify-content: center;
-}
 
 .item-tamaño {
   height: 300px;
@@ -163,11 +170,7 @@ img {
   transform: translateY(5px);
 }
 
-.instagram-item {
- display: flex;
- align-items: center;
 
-}
 
 .gift-card {
   display: flex;
