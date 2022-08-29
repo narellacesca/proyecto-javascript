@@ -31,12 +31,12 @@ class Productos {
 
 //array vacio donde pushear todos los productos que vaya agregando el usuario
 const products = []
-const prod1 = new Productos('1', 'BIKINI 1', 1200, '../src/img/bikini1.jpg');
-const prod2 = new Productos('2', 'BIKINI 2', 1200, '../src/img/bikini3.jpg');
-const prod3 = new Productos('3', 'BIKINI 3', 1200, '../src/img/bikini1.jpg');
-const prod4 = new Productos('4', 'BIKINI 4', 1200, '../src/img/bikini3.jpg');
-const prod5 = new Productos('5', 'gift card', 3000, '../src/img/GIFT CARD.png');
-const prod6 = new Productos('5', 'gift card', 1200, '../src/img/GIFT CARD.png');
+const prod1 = new Productos('1', 'Bikini 1', 1200, '../src/img/bikini1.jpg');
+const prod2 = new Productos('2', 'Bikini 2', 1200, '../src/img/bikini3.jpg');
+const prod3 = new Productos('3', 'Bikini 3', 1200, '../src/img/bikini1.jpg');
+const prod4 = new Productos('4', 'Bikini 4', 1200, '../src/img/bikini3.jpg');
+const prod5 = new Productos('5', 'Gift Card', 3000, '../src/img/giftcard1.jpg');
+const prod6 = new Productos('6', 'Gift Card', 1200, '../src/img/giftcard1.jpg');
 //push 
 products.push(prod1, prod2, prod3, prod4, prod5, prod6)
 
@@ -63,7 +63,7 @@ const mostrarProductos = (products) => {
         //evento para que cuando haga click se agregue al carrito
         button.addEventListener('click', () =>{
          cart (product.id);
-         Swal.fire(`agregaste ${product.nombre}`)
+         Swal.fire(`Agregaste ${product.nombre} al carrito &#129311;`)
         })
     })
 

@@ -1,7 +1,7 @@
 //sale
 const contenedorSale = document.getElementById('instagram-grid');
 const traerJson = () => {
-    fetch('./datos.json')
+    fetch('../datos.json')
         .then(response => response.json())
         .then(result => {
             let datos = result;

@@ -1,4 +1,6 @@
 const precioTotal = document.getElementById ("total");
+const vaciarCarrito = document.getElementById ("vaciar");
+
 //creo array vacio
 //funcion para mostrar productos en carrito 
 const shoppingCart = [];
@@ -21,10 +23,18 @@ const cart = (productId) =>{
     buttonDelete.addEventListener ('click', (e) =>{
      deleteProduct (e);
     })
-    precioTotal.innerText = products.reduce ((acc, product)=> acc+ product.precio, 0)
+    //borrar todo
+    vaciarCarrito.addEventListener ('click', (e) =>{
+    precioTotal.innerText = 0;
+    carritoVacio()    
+    })
+    function  carritoVacio () {
+cartContainer.removeChild (div)
+}
+//acum
+    precioTotal.innerText = shoppingCart.reduce ((acc, product)=> acc+ product.precio, 0)
 }
 mostrarEnCarrito ()
-
 
 }
 
@@ -32,3 +42,6 @@ function deleteProduct (e){
 let btnClicked = e.target;
 btnClicked.parentElement.remove()
 }
+
+    
+
